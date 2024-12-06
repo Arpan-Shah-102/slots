@@ -47,6 +47,16 @@ button {
   background-color: crimson;
   color: white;
 
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover, &:active {
+      transform: none;
+      background-color: crimson;
+      color: white;
+    }
+  }
   &:hover {
     background-color: white;
     color: crimson;
@@ -60,6 +70,16 @@ button {
   background-color: white;
   color: crimson;
 
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover, &:active {
+      transform: none;
+      background-color: white;
+      color: crimson;
+    }
+  }
   &:hover {
     background-color: crimson;
     color: white;
