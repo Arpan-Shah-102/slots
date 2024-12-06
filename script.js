@@ -32,6 +32,8 @@ moneyEarnedVar = 0;
 
 function spinSlot(iterations) {
   let completedSpins = 0
+  slotSound = new Audio('./assets/slot-spin-sound.mp3');
+  slotSound.play();
   for (let j = 0; j < iterations; j++) {
     setTimeout(function () {
       spin.disabled = true;
