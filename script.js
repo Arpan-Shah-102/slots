@@ -9,6 +9,9 @@ a = document.querySelector('.a');
 b = document.querySelector('.b');
 c = document.querySelector('.c');
 
+slotSound = new Audio('./assets/slot-spin-sound.mp3');
+slotPayout = new Audio('./assets/slot-payout.mp3');
+
 spin.addEventListener("click", function() {
   spinSlot(1);
 });
@@ -31,11 +34,11 @@ moneySpentVar = 0;
 moneyEarnedVar = 0;
 
 function spinSlot(iterations) {
-  let completedSpins = 0
-  slotSound = new Audio('./assets/slot-spin-sound.mp3');
-  slotSound.play();
+  let completedSpins = 0;
   for (let j = 0; j < iterations; j++) {
     setTimeout(function () {
+      slotSound.play();
+      
       spin.disabled = true;
       autoSpin.disabled = true;
 
@@ -62,11 +65,13 @@ function spinSlot(iterations) {
           moneyEarnedVar += 300;
           terminal.innerText = "Congratulations! You won $300!";
           moneyEarned.innerText = moneyEarnedVar;
+          slotPayout.play();
         }
         else if (s1 == s2 || s1 == s3 || s2 == s3) {
           moneyEarnedVar += 10;
           terminal.innerText = "Congratulations! You won $10!";
           moneyEarned.innerText = moneyEarnedVar;
+          slotPayout.play();
         }
         else {
           terminal.innerText = "Sorry, you didn't win.";
