@@ -61,7 +61,7 @@ function spinSlot(iterations) {
         }, 100 * i);
       }
       setTimeout(function() {
-        if (a == b && b == c) {
+        if (s1 == s2 && s2 == s3) {
           moneyEarnedVar += 300;
           terminal.innerText = "Congratulations! You won $300!";
           moneyEarned.innerText = moneyEarnedVar;
